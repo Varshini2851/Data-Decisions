@@ -21,22 +21,24 @@ The data for this project is sourced from the Kaggle dataset:
 ## Schema
 
 ```sql
-DROP TABLE IF EXISTS netflix;
-CREATE TABLE netflix
+DROP TABLE IF EXISTS netflix_01;
+CREATE TABLE netflix_01
 (
-    show_id      VARCHAR(5),
-    type         VARCHAR(10),
-    title        VARCHAR(250),
-    director     VARCHAR(550),
-    casts        VARCHAR(1050),
-    country      VARCHAR(550),
-    date_added   VARCHAR(55),
-    release_year INT,
-    rating       VARCHAR(15),
-    duration     VARCHAR(15),
-    listed_in    VARCHAR(250),
-    description  VARCHAR(550)
+	Show_id	    VARCHAR(10),
+	type_of	    VARCHAR(10),
+	Title	    VARCHAR(150),
+	Director    VARCHAR(220),
+	Casts	    VARCHAR(1000),
+	Country	    VARCHAR(150),
+	Date_added	VARCHAR(50),
+	Release_year INT,
+	Rating	    VARCHAR(10),
+	Duration	VARCHAR(25),
+	listed_in	VARCHAR(50),
+	Description VARCHAR(300)
 );
+
+SELECT * FROM netflix_01;
 ```
 
 ## Business Problems and Solutions
@@ -45,9 +47,9 @@ CREATE TABLE netflix
 
 ```sql
 SELECT 
-    type,
+    type_of,
     COUNT(*)
-FROM netflix
+FROM netflix_01
 GROUP BY 1;
 ```
 
@@ -58,7 +60,7 @@ GROUP BY 1;
 ```sql
 WITH RatingCounts AS (
     SELECT 
-        type,
+        type_of,
         rating,
         COUNT(*) AS rating_count
     FROM netflix
