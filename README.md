@@ -1,4 +1,4 @@
-# Netflix Data Analysis with Advanced SQL
+   # Netflix Data Analysis with Advanced SQL
 
 ![](https://github.com/najirh/netflix_sql_project/blob/main/logo.png)
 
@@ -44,6 +44,7 @@ SELECT * FROM netflix_01;
 ## Business Problems and Solutions
 
 ### 1. Count the Number of Movies vs TV Shows
+**Objective:** Determine the distribution of movies versus TV shows to understand the overall content mix on Netflix.
 
 ```sql
 SELECT 
@@ -53,7 +54,6 @@ FROM netflix_01
 GROUP BY 1;
 ```
 
-**Objective:** Determine the distribution of content types on Netflix.
 
 ### 2. Find the Most Common Rating for Movies and TV Shows
 
